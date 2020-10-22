@@ -3,6 +3,7 @@ import networkx as nx
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from networkx.drawing.nx_agraph import graphviz_layout
 
 
 def test_load(start, end):
@@ -92,7 +93,31 @@ def print_graph():
     
     G = nx.from_pandas_edgelist(df, 'parent_title', 'title')
     
+    print(nx.is_arborescence(G))
+    
     nx.draw(G, with_labels=True, node_size=0.5, font_size=0.1, width=0.05, edge_color='#AAAAAA')
     # plt.figure(3, figsize=(100, 100))
     plt.savefig('./data/filename.png', dpi=1200)
     plt.show(dpi=1200)
+
+
+def clean_dataset():
+    df = pd.read_csv('./data/wiki.csv')
+    
+    print(len(df))
+    df = df.drop_duplicates(subset=['title'])
+    
+    num_rows = df.loc[(df['title'].str.match(r'[0-3][0-9]{3}')) | df['parent_title'].str.match(r'[0-3][0-9]{3}')
+                      | (df['title'].str.match('Файл:')) | (df['parent_title'].str.match('Файл:'))]
+    df = df.drop(num_rows.index)
+    print(len(df))
+
+    df.to_csv('./data/wiki.csv', index=False)
+    
+    G = nx.from_pandas_edgelist(df, 'parent_title', 'title')
+    
+    pos = graphviz_layout(G, prog="twopi", args="")
+    # plt.figure(figsize=(8, 8))
+    nx.draw(G, pos, with_labels=True, node_size=0.1, font_size=0.001, width=0.01, edge_color='#AAAAAA')
+    plt.savefig('./data/wiki_tree.png', dpi=2000)
+    plt.show()
