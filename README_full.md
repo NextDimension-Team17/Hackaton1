@@ -17,7 +17,7 @@
 ## Структура репозитория
 "[Каталог](https://github.com/NextDimension-Team17/Hackaton1/)" содержит файлы исходного кода Python в формате .py, папку "[data](https://github.com/NextDimension-Team17/Hackaton1/tree/main/data)" с файлами датасета в формате .csv и ???, файлы визуализации в формате .png.
 
-Датасет в формате .csv содержит ??? записей и включают следующие поля: 
+Датасет в формате .csv содержит следующие поля: 
 * title - название статьи
 * parent - url parent статьи  
 * url - url статьи
