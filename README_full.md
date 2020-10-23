@@ -15,7 +15,7 @@
 Сбор датасета проводился по состоянию на 23 октября 2020 г. методом парсинга ссылок в теле текущей статьи на другие релевантные рассматриваемой теме статьи. Парсинг осуществлялся с использованием библиотеки "[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)" для Python. Алгоритм парсинга включает некоторые условия фильтрации нерелевантных ссылок, позволяющих частично исключить их из датасета. Файлы исходного кода включены в датасет. Для визуализации использовалась "[Javascript-библиотека D3](https://d3js.org/)", в частности, примеры из статьи "[Tree diagrams in d3.js](http://www.d3noob.org/2014/01/tree-diagrams-in-d3js_11.html)".
 
 ## Структура репозитория
-"[Каталог](https://github.com/NextDimension-Team17/Hackaton1/)" содержит файлы исходного кода Python в формате .py, папку "[data](https://github.com/NextDimension-Team17/Hackaton1/tree/main/data)" с файлом датасета в формате .csv, файлы визуализации в формате .png.
+"[Каталог](https://github.com/NextDimension-Team17/Hackaton1/)" содержит файлы исходного кода Python в формате .py, папку "[data](https://github.com/NextDimension-Team17/Hackaton1/tree/main/data)" с файлом датасета в формате .csv и файлами визуализации в формате .png.
 
 Датасет в формате .csv содержит следующие поля: 
 * title - название статьи
