@@ -18,9 +18,9 @@
 Каталог содержит папку "[data](https://github.com/NextDimension-Team17/Hackaton1/tree/main/data)" с образцами датасета в формате ???, файлы исходного кода Python, файлы визуализации в формате .png.
 
 Датасет в формате CSV включают следующие поля: 
-* title - название исходной статьи
-* parent - 
-* url - 
-* parent_title - 
+* title - название статьи
+* parent - url parent статьи  
+* url - url статьи
+* parent_title - название parent статьи
 
 
